@@ -1,0 +1,100 @@
+/* Styles to remove arrows from number input */
+.no-arrows::-webkit-inner-spin-button,
+.no-arrows::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-arrows {
+  /* Ensure the input width is not changed due to arrow removal */
+  -moz-appearance: textfield;
+}
+
+.down-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    color: #b3b3b3;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 42px;
+  }
+
+  .result_text {
+    background: #04021a;
+    border-radius: 8px;
+    padding: 10px;
+    max-width: 492px;
+    min-width: 265px;
+    overflow-wrap: break-word;
+    max-height: 20vh;
+    min-height: 10vh;
+    overflow: auto;
+    margin-top: 2rem;
+    color: #fff;
+    border: 1px solid #03c988;
+  }
+
+  form {
+    input {
+      background: none;
+      border: none;
+      border-bottom: 1px solid #03c988;
+      padding: 10px;
+      color: #fff;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+}
+
+.page-container {
+  .inner-cont {
+    padding: 4rem 0;
+    margin: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.4509803922);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    @media (max-width: 950px) {
+      flex-direction: column;
+    }
+
+    form {
+      display: flex;
+      flex-direction: row;
+
+      @media (max-width: 950px) {
+        flex-direction: column;
+      }
+
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+
+      textarea {
+        background: #05011b;
+        border: 1px solid #79c58b;
+        border-radius: 8px;
+        padding: 10px;
+        color: #fff;
+        max-width: 80vw;
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.divider {
+  margin-top: 3rem;
+}

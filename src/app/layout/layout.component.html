@@ -1,0 +1,171 @@
+<div class="main-container">
+
+
+
+
+    <mat-toolbar [ngClass]="{ sticky: scrolled }" class="header">
+        <mat-toolbar-row>
+
+            <button mat-icon-button (click)="snav.toggle()" fxShow="true" style="color:#fff" fxHide.gt-sm>
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <div class="logo-cont">
+                <a routerLink="/home"><img src="../../assets/img/logo.png"></a>
+            </div>
+
+            <nav class="main-menu" fxShow="true" fxHide.lt-md>
+                <ul>
+                    <li>
+                        <a routerLink="/home" routerLinkActive="is-active" class="top-navigation-button">
+
+                            <mat-icon>home</mat-icon>
+                            <span>Home</span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="menu-item" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
+                            <mat-icon>settings</mat-icon> Tools
+
+                            <div class="dropdown" *ngIf="isDropdownVisible">
+
+                                <div class="dropdown-item">
+                    <li>
+                        <a routerLink="/clipboard" routerLinkActive="is-active" class="top-navigation-button">
+                            <mat-icon>content_paste</mat-icon>
+                            <span>Online Clipboard</span>
+                        </a>
+                    </li>
+</div>
+
+<div class="dropdown-item">
+    <li>
+        <a routerLink="/onlineTransfer" routerLinkActive="is-active" class="top-navigation-button">
+            <mat-icon>cloud_upload</mat-icon>
+            <span>Online File Transfer</span>
+        </a>
+    </li>
+</div>
+
+
+
+</div>
+</a>
+</li>
+
+<li>
+    <a routerLink="/contact" routerLinkActive="is-active" class="top-navigation-button">
+
+        <mat-icon>mail_outline</mat-icon>
+        <span> Say Hello </span>
+
+    </a>
+</li>
+
+<li>
+    <div class="project-button">
+        <a href="https://github.com/nmikal98/Protfolio.git">
+            <img src="../../assets/img/branch.svg">
+            <img src="../../assets/img/star.svg"></a>
+    </div>
+</li>
+</ul>
+</nav>
+</mat-toolbar-row>
+</mat-toolbar>
+
+
+<mat-sidenav-container fxFlexFill>
+    <mat-sidenav #snav [ngClass]="{ top58: scrolled }">
+        <mat-nav-list class="mobile-navmenu">
+
+            <a mat-list-item routerLink="/home" routerLinkActive="is-active" class="mobile-menu-item"
+                (click)="snav.toggle()">
+
+                <mat-icon>home</mat-icon>
+                <span>Home</span>
+
+            </a>
+
+            <!-- <a mat-list-item routerLink="/countries" routerLinkActive="is-active" class="mobile-menu-item"
+                (click)="snav.toggle()">
+
+                <mat-icon>public</mat-icon>
+                <span>Countries Repo</span>
+
+            </a> -->
+
+            <mat-expansion-panel class="mobile-menu-section">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <mat-icon>settings</mat-icon>
+                        <span>Tools</span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+
+
+                <a mat-list-item routerLink="/clipboard" routerLinkActive="is-active" class="mobile-menu-item"
+                    (click)="snav.toggle()">
+                    <mat-icon>content_paste</mat-icon>
+                    <span>Online Clipboard</span>
+                </a>
+
+                <a mat-list-item routerLink="/onlineTransfer" routerLinkActive="is-active" class="mobile-menu-item"
+                    (click)="snav.toggle()">
+                    <mat-icon>cloud_upload</mat-icon>
+                    <span>Online File Transfer</span>
+                </a>
+
+
+
+
+            </mat-expansion-panel>
+
+
+
+
+
+            <a mat-list-item routerLink="/contact" routerLinkActive="is-active" class="mobile-menu-item"
+                (click)="snav.toggle()">
+
+                <mat-icon>mail_outline</mat-icon>
+                <span> Say Hello </span>
+
+            </a>
+
+            <a mat-list-item href="https://github.com/nmikal98/Protfolio.git" class="mobile-menu-item">
+                <img src="../../assets/img/branch.svg">
+                <span> GitHub Link </span>
+
+            </a>
+
+        </mat-nav-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content fxFlexFill (scroll)="onScroll($event)">
+
+        <div class="outlet" id="scrollable">
+            <router-outlet></router-outlet>
+        </div>
+
+
+        <div class="footer">
+            <div class="row">
+                <div class="col-md-12 flex-right">
+                    <p> © 2023 All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+
+    </mat-sidenav-content>
+
+
+</mat-sidenav-container>
+
+
+
+
+</div>

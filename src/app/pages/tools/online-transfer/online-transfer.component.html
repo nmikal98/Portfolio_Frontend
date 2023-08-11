@@ -1,0 +1,120 @@
+<div class="page-container">
+
+
+
+
+    <div class="row page-title">
+
+        <h1 class="flex-middle">Online File Transfer</h1>
+
+
+        <div class="sub-title">
+            <p> Easily transfer files between devices!</p>
+
+            <div class="tooltip-container">
+                <mat-icon>info</mat-icon>
+                <div class="tooltip-text">
+
+                    1. Upload a file up to 10 MB <br>
+                    2. Memorize your 4-digit pin <br>
+                    3. Open this page on a browser on your target machine <br>
+                    4. Paste the pin and retrieve your file <br>
+
+                    *All files are automatically destroyed after you download them from the
+                    server. <br> **Each upload is valid for one hour.
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <hr class="divider">
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="inner-cont">
+
+
+
+
+            <div class="up-cont">
+
+                <form (ngSubmit)="onUpload()" #myForm="ngForm">
+
+
+                    <label for="fileData" class="drop-container" id="dropcontainer">
+                        <span class="drop-title">Drop a file here</span>
+                        or
+                        <input type="file" id="fileData" name="fileData" (change)="onFileChange($event)" required>
+                    </label>
+
+                    <button class="Btn" type="submit">
+                        <mat-icon>check</mat-icon>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+
+            <div class="vertical-divider">
+                <div class="center-element"> OR </div>
+            </div>
+
+
+
+            <div class="down-cont">
+
+                <!-- <span class="title">Download your file</span> -->
+
+
+                <form (ngSubmit)="onRetrieve()">
+
+
+
+                    <input class="no-arrows" type="number" id="fourDigitNumber" name="fourDigitNumber"
+                        placeholder="Enter your 4-digit pin" [(ngModel)]="retrieve_code" (input)="onInput($event)"
+                        required>
+
+
+                    <!-- <button class="button" type="submit"> <span class="text">Download</span>
+                    <mat-icon> cloud_download</mat-icon> </button> -->
+
+
+                    <button class="Btn" type="submit">
+                        <svg class="svgIcon" viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z">
+                            </path>
+                        </svg>
+                        <span class="icon2"></span>
+                        <span class="tooltip">Download</span>
+                    </button>
+
+
+                </form>
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>

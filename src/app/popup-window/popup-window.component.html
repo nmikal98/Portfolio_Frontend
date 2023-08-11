@@ -1,0 +1,18 @@
+<button class="close-button" (click)="closeDialog()"> <mat-icon>close</mat-icon> </button>
+
+
+<div class="popup-content">
+    <div class="head">
+        <h3>Upload Successful!</h3>
+        <h4>Save this code to retrieve your content</h4>
+        <p>
+            Your content is automatically deleted <span> after 1 Hour </span> or <span> when you download the
+                content </span> from the server. </p>
+    </div>
+
+    <div class="pin-cont">
+
+        <a>{{ data.code }}</a>
+        <span mat-button (click)="copyToClipboard(data.code)"> <mat-icon>file_copy</mat-icon> </span>
+    </div>
+</div>

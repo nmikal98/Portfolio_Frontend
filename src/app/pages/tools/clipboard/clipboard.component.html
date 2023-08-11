@@ -1,0 +1,123 @@
+<div class="page-container">
+
+
+
+
+    <div class="row page-title">
+
+        <h1 class="flex-middle">Online Clipboard</h1>
+
+
+        <div class="sub-title">
+            <p> Easily Copy and Paste text between devices!</p>
+
+            <div class="tooltip-container">
+                <mat-icon>info</mat-icon>
+                <div class="tooltip-text">
+
+                    1. Paste your text on the textbox (Up to 1000 characters) <br>
+                    2. Memorize your 4-digit pin <br>
+                    3. Open this page on a browser on your target machine <br>
+                    4. Enter the pin and copy your text <br>
+
+                    *All uploads are automatically destroyed after you copy them from the
+                    server. <br> **Each upload is valid for one hour.
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <hr class="divider">
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="inner-cont">
+
+
+
+
+            <div class="up-cont">
+
+                <form (ngSubmit)="onFormSubmit()">
+
+                    <textarea id="textarea" name="textAreaInput" placeholder="Paste your note here"
+                        [(ngModel)]="textAreaInput" rows="10" cols="50" [maxlength]="maxCharacters"></textarea>
+                    <br />
+                    <button class="Btn" type="submit">
+                        <mat-icon>check</mat-icon>
+
+                    </button>
+                </form>
+
+
+
+            </div>
+
+
+
+            <div class="vertical-divider">
+                <div class="center-element"> OR </div>
+            </div>
+
+
+
+            <div class="down-cont">
+
+
+
+
+                <form (ngSubmit)="onRetrieve()">
+
+                    <input class="no-arrows" type="number" id="fourDigitNumber" name="fourDigitNumber"
+                        placeholder="Enter your 4-digit pin" [(ngModel)]="retrieve_code" (input)="onInput($event)"
+                        required>
+
+
+                    <!-- <button class="button" type="submit"> <span class="text">Download</span>
+                    <mat-icon> cloud_download</mat-icon> </button> -->
+
+
+
+                    <button type="submit" class="Btn">
+
+
+                        <mat-icon>content_copy</mat-icon>
+
+                        <span class="tooltip">Copy</span>
+
+                    </button>
+
+
+
+
+                </form>
+
+
+                <div class="result_text" *ngIf="displayTextFromDB">{{ displayTextFromDB }}</div>
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>

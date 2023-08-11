@@ -1,0 +1,277 @@
+.hero-section {
+  padding: 4rem 2rem;
+  margin-top: -84px;
+  padding-top: calc(84px + 4rem);
+
+  background-image: url("../../../assets/img/bg-over.png");
+
+  img {
+    width: 80%;
+  }
+
+  .parallax {
+    padding: 4rem;
+
+    @media screen and (max-width: 674px) {
+      padding: 0rem !important;
+      margin-top: 2rem;
+    }
+  }
+
+  // @media screen and (max-width: 674px) {
+  //   padding-top: 4rem;
+  // }
+}
+
+.hero-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.typing-text {
+  margin-top: 2rem;
+}
+
+.wave {
+  animation-name: wave-animation; /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s; /* Change to speed up or slow down */
+  animation-iteration-count: infinite; /* Never stop waving :) */
+  transform-origin: 70% 70%; /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/////////////////////////////
+///
+///
+
+.about-me {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  background: #00000073;
+}
+
+.background {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  mat-icon {
+    margin-right: 8px;
+  }
+}
+
+.image-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    max-width: 28rem;
+  }
+}
+
+.skills {
+  .divider {
+    margin-bottom: 4rem;
+  }
+}
+.boxes-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .box {
+    border: 1px solid #5481aa;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: 0.7s;
+    margin: 2rem;
+
+    @media screen and (max-width: 674px) {
+      border: none;
+      padding: 0;
+      margin: 1rem;
+    }
+
+    &:hover {
+      transform: translate(0, -12px);
+      transition: 0.3s;
+      border: 2px solid #03c988;
+    }
+
+    svg {
+      width: 6rem;
+      @media screen and (max-width: 674px) {
+        width: 3rem;
+      }
+    }
+
+    p {
+      color: #fff;
+      span {
+        color: #03c988;
+      }
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2rem;
+  background-color: #09022f;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 1;
+  width: 300px;
+  box-shadow: 0px 0px 20px 0px #403e4d;
+
+  @media screen and (max-width: 670px) {
+    width: 200px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.box:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.social-media-row {
+  background: #0000008f;
+  padding: 4rem 2rem 4rem 2rem;
+  transition: 0.7s;
+
+  @media screen and (max-width: 674px) {
+    padding: 6rem 2rem 6rem 2rem;
+  }
+  a {
+    margin: 0 2rem;
+
+    &:hover {
+      transform: translateY(-10px);
+      transition: 0.3s;
+    }
+
+    img {
+      height: 36px;
+    }
+  }
+}
+
+.wrapper {
+  background: #13005a;
+  transform: translateY(50%);
+  border-radius: 8px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  p {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    max-width: 50%;
+    line-height: 2rem;
+  }
+
+  @media screen and (max-width: 674px) {
+    flex-direction: column;
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.joke-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .joke-box {
+    border: 2px solid #03c988;
+    padding: 2rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    .joke-setup {
+      font-size: 1.8rem;
+      color: #fff;
+      margin: 1rem;
+      line-height: 2.2rem;
+      text-align: center;
+    }
+
+    .joke-punchline {
+      font-size: 1.5rem;
+      color: #9e9e9e;
+      margin: 1rem;
+      line-height: 1.7rem;
+      text-align: center;
+    }
+
+    button {
+      background: none;
+      border: none;
+      padding: 0;
+      height: 2rem;
+
+      mat-icon {
+        font-size: 2rem;
+        width: 2rem;
+        color: #03c988;
+        height: 2rem;
+      }
+    }
+  }
+}
+
+.custom-row.joke {
+  background: #00000073;
+}
