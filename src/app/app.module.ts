@@ -27,6 +27,7 @@ import { NumberFormatPipe } from './number-format.pipe';
 import { ClipboardComponent } from './pages/tools/clipboard/clipboard.component';
 import { OnlineTransferComponent } from './pages/tools/online-transfer/online-transfer.component';
 import { PopupWindowComponent } from './popup-window/popup-window.component';
+import { QrComponent } from './pages/tools/qr/qr.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { PopupWindowComponent } from './popup-window/popup-window.component';
     ClipboardComponent,
     OnlineTransferComponent,
     PopupWindowComponent,
+    QrComponent,
   ],
   imports: [
     BrowserModule,

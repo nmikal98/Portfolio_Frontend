@@ -1,0 +1,47 @@
+.page-container {
+  .inner-cont {
+    padding: 4rem 0;
+    margin: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.4509803922);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    @media (max-width: 950px) {
+      flex-direction: column;
+    }
+
+    .generator-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        width: 40vw;
+        height: 3rem;
+        padding: 1rem;
+        background: #05011b;
+        border: 1px solid #79c58b;
+        border-radius: 8px;
+        color: #fff;
+
+        &:focus-visible {
+          outline: none;
+        }
+
+        @media (max-width: 950px) {
+          width: 80vw;
+        }
+      }
+
+      @media (max-width: 950px) {
+        flex-direction: column;
+      }
+    }
+  }
+}
+
+.divider {
+  margin-top: 3rem;
+}

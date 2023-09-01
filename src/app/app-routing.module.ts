@@ -9,6 +9,7 @@ import { NasaComponent } from './pages/nasa/nasa.component';
 import { CountriesComponent } from './pages/countries/countries.component';
 import { ClipboardComponent } from './pages/tools/clipboard/clipboard.component';
 import { OnlineTransferComponent } from './pages/tools/online-transfer/online-transfer.component';
+import { QrComponent } from './pages/tools/qr/qr.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,11 @@ const routes: Routes = [
       {
         path: 'onlineTransfer',
         component: OnlineTransferComponent,
+      },
+
+      {
+        path: 'qrgenerator',
+        component: QrComponent,
       },
 
       { path: '**', component: PageNotFoundComponent },

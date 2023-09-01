@@ -50,6 +50,16 @@
 </div>
 
 
+<div class="dropdown-item">
+    <li>
+        <a routerLink="/qrgenerator" routerLinkActive="is-active" class="top-navigation-button">
+            <mat-icon>qr_code</mat-icon>
+            <span>QR Code Generator</span>
+        </a>
+    </li>
+</div>
+
+
 
 </div>
 </a>
@@ -116,6 +126,14 @@
                     (click)="snav.toggle()">
                     <mat-icon>cloud_upload</mat-icon>
                     <span>Online File Transfer</span>
+                </a>
+
+
+
+                <a mat-list-item routerLink="/qrgenerator" routerLinkActive="is-active" class="mobile-menu-item"
+                    (click)="snav.toggle()">
+                    <mat-icon>qr_code</mat-icon>
+                    <span>QR Code Generator</span>
                 </a>
 
 
