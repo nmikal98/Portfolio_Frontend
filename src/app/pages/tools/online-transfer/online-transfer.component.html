@@ -49,7 +49,8 @@
                     <label for="fileData" class="drop-container" id="dropcontainer">
                         <span class="drop-title">Drop a file here</span>
                         or
-                        <input type="file" id="fileData" name="fileData" (change)="onFileChange($event)" required>
+                        <input type="file" id="fileData" #fileInput name="fileData" (change)="onFileChange($event)"
+                            required>
                     </label>
 
                     <button class="Btn" type="submit">
@@ -81,7 +82,7 @@
 
 
 
-                    <input class="no-arrows" type="number" id="fourDigitNumber" name="fourDigitNumber"
+                    <input class="no-arrows" type="number" #numberInput id="fourDigitNumber" name="fourDigitNumber"
                         placeholder="Enter your 4-digit pin" [(ngModel)]="retrieve_code" (input)="onInput($event)"
                         required>
 

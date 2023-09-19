@@ -18,7 +18,9 @@ export class DataService {
   }
 
   downloadFile(code: number): Observable<any> {
-    return this.http.get(`${BASEURL}/api/v1/files/${code}`);
+    return this.http.get(`${BASEURL}/api/v1/files/${code}`, {
+      responseType: 'blob',
+    });
   }
 
   // Clipboard routes
