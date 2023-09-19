@@ -41,11 +41,11 @@ export class OnlineTransferComponent {
       if (allowedFileTypes.includes(file.type)) {
         const fileSizeInMB = file.size / (1024 * 1024);
 
-        if (fileSizeInMB <= 20) {
+        if (fileSizeInMB <= 100) {
           this.fileToUpload = file;
         } else {
           this.fileToUpload = null;
-          this.ts.error('Please upload a file smaller than 20MB');
+          this.ts.error('Please upload a file smaller than 100MB');
         }
       } else {
         this.fileToUpload = null;
