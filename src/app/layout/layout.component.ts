@@ -1,4 +1,5 @@
 import { Component, HostListener, Inject } from '@angular/core';
+import { ScrollService } from '../scroll.service';
 
 @Component({
   selector: 'app-layout',
@@ -11,6 +12,8 @@ export class LayoutComponent {
 
   isDropdownVisible: boolean = false;
 
+  constructor(private scrollService: ScrollService) {}
+
   showDropdown() {
     this.isDropdownVisible = true;
   }
@@ -20,6 +23,9 @@ export class LayoutComponent {
   }
 
   onScroll(e: any) {
+    const scrollPosition = (e.target as Element).scrollTop;
+    this.scrollService.emitScrollEvent(scrollPosition);
+
     const element = document.getElementById('scrollable');
 
     this.distance = element?.getBoundingClientRect().top;

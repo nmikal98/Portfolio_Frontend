@@ -1,87 +1,118 @@
-<div class="img-cont">
-    <img src="../../../assets/img/avatar.svg">
+<!-- <div class="img-cont">
+    <img src="../../../assets/img/avatar-01.svg">
 </div>
 
 <div class="title-section">
     <h2>Thanks for taking the time to reach out.</h2>
-    <h2>How can i help you?</h2>
-</div>
+</div> -->
+
+<div class="page-container">
+    <div class="row page-title">
+
+        <h1 class="flex-middle">Contact</h1>
 
 
-<div class="contact-form-wrapper">
+        <div class="sub-title">
+            <p> Thanks for taking the time to reach out, drop a line below and i'll get back to you soon! </p>
+        </div>
 
 
 
-    <div class="container">
+        <hr class="divider light">
 
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
-                    <div class="form-group">
-
-                        <div class="row">
-
-                            <div class="col-lg-6">
-
-                                <input type="email" class="form-control" name="Email" aria-describedby="emailHelp"
-                                    placeholder="Your email" formControlName="Email">
+    </div>
 
 
-                                <mat-error *ngIf="submitted && f.Email.errors">
-                                    <small class="text-danger" *ngIf="f.Email.errors.required">
-                                        Email is
-                                        required</small>
+    <div class="row">
 
-                                    <small class="text-danger" *ngIf="f.Email.errors.pattern">
-                                        Email is
-                                        not valid</small>
+        <div class="container">
 
-                                </mat-error>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+                        <div class="form-group">
 
-                                <mat-error *ngIf="submitted && f.Fullname.errors">
-                                    <small class="text-danger" *ngIf="f.Email.errors.pattern">
-                                        Incorrect email format</small>
+                            <div class="row">
 
-                                </mat-error>
+                                <div class="col-lg-6">
+
+                                    <input type="email" class="form-control" name="Email" aria-describedby="emailHelp"
+                                        placeholder="Your email" formControlName="Email">
+
+
+                                    <mat-error *ngIf="submitted && f.Email.errors">
+                                        <small class="text-danger" *ngIf="f.Email.errors.required">
+                                            Email is
+                                            required</small>
+
+                                        <small class="text-danger" *ngIf="f.Email.errors.pattern">
+                                            Email is
+                                            not valid</small>
+
+                                    </mat-error>
+
+                                    <mat-error *ngIf="submitted && f.Fullname.errors">
+                                        <small class="text-danger" *ngIf="f.Email.errors.pattern">
+                                            Incorrect email format</small>
+
+                                    </mat-error>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" name="Fullname" placeholder="Full Name"
+                                        formControlName="Fullname">
+
+
+                                    <mat-error *ngIf="submitted && f.Fullname.errors">
+                                        <small class="text-danger" *ngIf="f.Fullname.errors.required">
+                                            Name is
+                                            required</small>
+
+                                    </mat-error>
+                                </div>
                             </div>
-                            <div class="col-lg-6">
-                                <input type="text" class="form-control" name="Fullname" placeholder="Full Name"
-                                    formControlName="Fullname">
 
-
-                                <mat-error *ngIf="submitted && f.Fullname.errors">
-                                    <small class="text-danger" *ngIf="f.Fullname.errors.required">
-                                        Name is
-                                        required</small>
-
-                                </mat-error>
-                            </div>
                         </div>
 
-                    </div>
-
-                    <div class="form-group">
+                        <div class="form-group">
 
 
-                        <textarea placeholder="Type your message" class="form-control" formControlName="Comment"
-                            name="Comment"></textarea>
+                            <textarea placeholder="Type your message" class="form-control" formControlName="Comment"
+                                name="Comment"></textarea>
 
-                        <mat-error *ngIf="submitted && f.Comment.errors">
-                            <small class="text-danger" *ngIf="f.Comment.errors.required">
-                                Message is
-                                required</small>
+                            <mat-error *ngIf="submitted && f.Comment.errors">
+                                <small class="text-danger" *ngIf="f.Comment.errors.required">
+                                    Message is
+                                    required</small>
 
-                        </mat-error>
-                    </div>
+                            </mat-error>
+                        </div>
 
 
-                    <div class="flex-middle">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </form>
+                        <div class="flex-middle">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+
+
+
+
+        <div class="social-media">
+            <a href="https://github.com/nmikal98"><img src="../../../assets/img/github.png"></a>
+
+            <a href="https://www.linkedin.com/in/nikolas-mikallos-3bb759231/"><img
+                    src="../../../assets/img/linkedin.png"></a>
+
+            <a href="https://www.instagram.com/n.mikallos/?hl=en"><img src="../../../assets/img/instagram.png"></a>
+
+            <a href="https://www.facebook.com/nikolas.mikallos/"><img src="../../../assets/img/facebook.png"></a>
+        </div>
+
+
     </div>
+
 
 
 </div>

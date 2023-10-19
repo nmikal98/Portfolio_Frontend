@@ -11,10 +11,9 @@ import {
 
 // @ts-ignore
 import Typewriter from 't-writer.js';
-
 import { NgxSpinnerService } from 'ngx-spinner';
-
 import { JokeService } from '../../joke.service';
+import { ScrollService } from 'src/app/scroll.service';
 
 @Component({
   selector: 'app-home',
@@ -144,35 +143,38 @@ export class HomeComponent implements OnInit {
 
   educationData = [
     {
-      date: '09/2013 - 06/2016',
-      title: 'High School',
-      description: 'Lyceum of Apostle Mark',
+      date: '09/2017 - 06/2023',
+      title: "Bachelor's Degree | Computer Sciense",
+      description:
+        'University of Cyprus | Faculty of Pure and Applied Sciences',
     },
+
     {
       date: '07/2016 - 08/2017',
       title: 'Obligatory Military Service',
       description: 'Infantry Battalion',
     },
+
     {
-      date: '09/2017 - 06/2023',
-      title: "Bachelor's Degree | Computer Sciense",
-      description:
-        'University of Cyprus | Faculty of Pure and Applied Sciences',
+      date: '09/2013 - 06/2016',
+      title: 'High School',
+      description: 'Lyceum of Apostle Mark',
     },
     // Add more education data as needed
   ];
 
   experienceData = [
     {
-      date: '08/2021 - 03/2022',
-      title: 'Junior Software Developer',
-      description: 'GnosisNet Ltd, Nicosia',
-    },
-    {
       date: '03/2022 - CURRENT',
       title: 'Senior Software Developer',
       description: 'Channel IT Ltd, Nicosia',
     },
+    {
+      date: '08/2021 - 03/2022',
+      title: 'Junior Software Developer',
+      description: 'GnosisNet Ltd, Nicosia',
+    },
+
     // Add more experience data as needed
   ];
 
@@ -208,12 +210,26 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private jokeService: JokeService,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService,
+    private scrollService: ScrollService
   ) {}
 
   ngOnInit(): void {
     this.type();
     this.loadJoke();
+
+    this.scrollService.getScrollObservable().subscribe((scrollPosition) => {
+      const elementsArray = Array.from(
+        document.getElementsByClassName('fade-in')
+      );
+      elementsArray.forEach((element) => {
+        if (isElementInMiddleOfViewport(element)) {
+          element?.classList.add('active');
+        } else {
+          element?.classList.remove('active');
+        }
+      });
+    });
   }
 
   type() {
@@ -314,4 +330,24 @@ interface PosModel2D {
 
 interface PosModel3D extends PosModel2D {
   z: number;
+}
+
+function isElementInMiddleOfViewport(element: any) {
+  const rect = element.getBoundingClientRect();
+  const windowHeight =
+    window.innerHeight || document.documentElement.clientHeight;
+  const viewportMiddle = windowHeight / 2;
+  const marginStart = viewportMiddle - 200; // 200 pixels above the center
+  const marginEnd = viewportMiddle + 200; // 200 pixels below the center
+
+  // Check if the middle of the element is within the vertical range of the viewport with margins
+  const verticalMiddleInView =
+    rect.top <= marginEnd && rect.bottom >= marginStart;
+
+  // Check if the element is within the horizontal viewport
+  const horizontalInView =
+    rect.left <= window.innerWidth && rect.left + rect.width >= 0;
+
+  // Return true if both vertical middle and horizontal positions are in view
+  return verticalMiddleInView && horizontalInView;
 }

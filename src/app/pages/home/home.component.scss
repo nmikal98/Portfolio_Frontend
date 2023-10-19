@@ -93,7 +93,15 @@
   align-items: center;
   justify-content: center;
   img {
-    max-width: 28rem;
+    max-width: 22rem;
+    @media screen and (max-width: 480px) {
+      max-width: 14rem;
+      margin-bottom: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    margin-bottom: 2rem;
   }
 }
 
@@ -206,6 +214,10 @@
   justify-content: space-around;
   align-items: center;
 
+  h2 {
+    margin-bottom: 0;
+    line-height: 3rem;
+  }
   p {
     font-size: 24px;
     color: #fff;
@@ -274,4 +286,16 @@
 
 .custom-row.joke {
   background: #00000073;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.fade-in.active {
+  opacity: 1;
+}
+
+::ng-deep .mat-mdc-tab-body-content {
+  padding: 2rem;
 }

@@ -101,11 +101,18 @@ h4 {
 }
 
 .divider {
-  border: 6px solid $light-blue;
   border-radius: 8px;
   width: 15%;
   margin: 0 auto;
   margin-bottom: 3rem;
+
+  &.light {
+    border: 6px solid #1c82ad;
+  }
+
+  &.dark {
+    border: 6px solid #1c82ad3b;
+  }
 }
 
 // Main btn-primary
@@ -171,7 +178,8 @@ h4 {
   padding: 0rem 4rem;
   h2 {
     margin-bottom: 2rem;
-
+    line-height: 3rem;
+    text-align: center;
     span {
       color: #03c988;
     }

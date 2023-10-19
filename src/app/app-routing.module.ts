@@ -5,8 +5,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { NasaComponent } from './pages/nasa/nasa.component';
-import { CountriesComponent } from './pages/countries/countries.component';
 import { ClipboardComponent } from './pages/tools/clipboard/clipboard.component';
 import { OnlineTransferComponent } from './pages/tools/online-transfer/online-transfer.component';
 import { QrComponent } from './pages/tools/qr/qr.component';
@@ -20,15 +18,6 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
-      },
-      {
-        path: 'nasa',
-        component: NasaComponent,
-      },
-
-      {
-        path: 'countries',
-        component: CountriesComponent,
       },
       {
         path: 'contact',

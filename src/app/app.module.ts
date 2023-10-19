@@ -18,10 +18,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { TimelineItemComponent } from './timeline-item/timeline-item.component';
-import { NasaComponent } from './pages/nasa/nasa.component';
 import { LargeImageDialogComponent } from './large-image-dialog/large-image-dialog.component';
 
-import { CountriesComponent } from './pages/countries/countries.component';
 import { NumberFormatPipe } from './number-format.pipe';
 
 import { ClipboardComponent } from './pages/tools/clipboard/clipboard.component';
@@ -37,9 +35,7 @@ import { QrComponent } from './pages/tools/qr/qr.component';
     ContactComponent,
     HomeComponent,
     TimelineItemComponent,
-    NasaComponent,
     LargeImageDialogComponent,
-    CountriesComponent,
     NumberFormatPipe,
     ClipboardComponent,
     OnlineTransferComponent,
