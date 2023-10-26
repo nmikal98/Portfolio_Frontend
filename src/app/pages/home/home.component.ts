@@ -337,8 +337,8 @@ function isElementInMiddleOfViewport(element: any) {
   const windowHeight =
     window.innerHeight || document.documentElement.clientHeight;
   const viewportMiddle = windowHeight / 2;
-  const marginStart = viewportMiddle - 200; // 200 pixels above the center
-  const marginEnd = viewportMiddle + 200; // 200 pixels below the center
+  const marginStart = viewportMiddle - 300; // 300 pixels above the center
+  const marginEnd = viewportMiddle + 300; // 300 pixels below the center
 
   // Check if the middle of the element is within the vertical range of the viewport with margins
   const verticalMiddleInView =
