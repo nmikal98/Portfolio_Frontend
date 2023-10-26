@@ -10,11 +10,19 @@
   }
 
   .parallax {
-    padding: 4rem;
+    // padding: 4rem;
+    display: flex;
+    justify-content: center;
+    svg {
+      @media screen and (max-width: 992px) {
+        margin-top: 2rem;
+        width: 60%;
+      }
 
-    @media screen and (max-width: 674px) {
-      padding: 0rem !important;
-      margin-top: 2rem;
+      @media screen and (max-width: 674px) {
+        width: 80%;
+        margin-top: 2rem;
+      }
     }
   }
 
@@ -66,6 +74,84 @@
   } /* Reset for the last half to pause */
   100% {
     transform: rotate(0deg);
+  }
+}
+
+.services-row {
+  padding: 4rem 0;
+
+  .service-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: #03c988;
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+
+.card {
+  display: block;
+  position: relative;
+  width: 412px;
+  background-color: #374754;
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+
+  h3,
+  p {
+    color: #fff;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: #03c988;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.25s ease-out;
+  }
+
+  &:hover:before {
+    transform: scale(27);
+  }
+}
+
+.card1:hover {
+  p {
+    transition: all 0.3s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  h3 {
+    transition: all 0.3s ease-out;
+    color: #ffffff;
   }
 }
 
@@ -153,7 +239,7 @@
 
 .tooltip {
   position: absolute;
-  top: 100%;
+  top: 0%;
   left: 50%;
   transform: translateX(-50%);
   padding: 2rem;
