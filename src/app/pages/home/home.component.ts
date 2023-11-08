@@ -1,4 +1,3 @@
-import { HtmlParser } from '@angular/compiler';
 import {
   Component,
   ElementRef,
@@ -12,8 +11,10 @@ import {
 // @ts-ignore
 import Typewriter from 't-writer.js';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { JokeService } from '../../joke.service';
-import { ScrollService } from 'src/app/scroll.service';
+import { JokeService } from '../../shared/joke.service';
+import { ScrollService } from 'src/app/shared/scroll.service';
+import { QuoteFormComponent } from 'src/app/quote-form/quote-form.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-home',
@@ -141,43 +142,6 @@ export class HomeComponent implements OnInit {
     },
   ] as Array<ConfigModel>;
 
-  educationData = [
-    {
-      date: '09/2017 - 06/2023',
-      title: "Bachelor's Degree | Computer Sciense",
-      description:
-        'University of Cyprus | Faculty of Pure and Applied Sciences',
-    },
-
-    {
-      date: '07/2016 - 08/2017',
-      title: 'Obligatory Military Service',
-      description: 'Infantry Battalion',
-    },
-
-    {
-      date: '09/2013 - 06/2016',
-      title: 'High School',
-      description: 'Lyceum of Apostle Mark',
-    },
-    // Add more education data as needed
-  ];
-
-  experienceData = [
-    {
-      date: '03/2022 - CURRENT',
-      title: 'Senior Software Developer',
-      description: 'Channel IT Ltd, Nicosia',
-    },
-    {
-      date: '08/2021 - 03/2022',
-      title: 'Junior Software Developer',
-      description: 'GnosisNet Ltd, Nicosia',
-    },
-
-    // Add more experience data as needed
-  ];
-
   joke: any;
 
   @ViewChild('parallaxRef')
@@ -211,7 +175,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private jokeService: JokeService,
     private spinner: NgxSpinnerService,
-    private scrollService: ScrollService
+    private scrollService: ScrollService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -310,6 +275,19 @@ export class HomeComponent implements OnInit {
     element.style.transform = 'none';
 
     element.style.transition = 'all 0.7s ease';
+  }
+
+  openPopupForm(clickedFrom: string): void {
+    const dialogRef = this.dialog.open(QuoteFormComponent, {
+      width: '300px', // Set the desired width
+      data: clickedFrom,
+    });
+
+    // Handle dialog close event if needed
+    dialogRef.afterClosed().subscribe((result) => {
+      // Handle the result if needed
+      console.log('Dialog closed', result);
+    });
   }
 }
 

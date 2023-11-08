@@ -111,11 +111,11 @@ h4 {
   margin-bottom: 3rem;
 
   &.light {
-    border: 6px solid #1c82ad;
+    border: 6px solid #202e4b;
   }
 
   &.dark {
-    border: 6px solid #1c82ad3b;
+    border: 6px solid #172135;
   }
 }
 
@@ -475,4 +475,19 @@ h4 {
   .tooltip-container:hover .tooltip-text {
     display: block;
   }
+}
+.cdk-overlay-pane {
+  width: 60vw !important;
+
+  @media screen and (max-width: 674px) {
+    width: 90vw !important;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.fade-in.active {
+  opacity: 1;
 }

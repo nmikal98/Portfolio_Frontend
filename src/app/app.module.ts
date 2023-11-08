@@ -20,12 +20,15 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { TimelineItemComponent } from './timeline-item/timeline-item.component';
 import { LargeImageDialogComponent } from './large-image-dialog/large-image-dialog.component';
 
-import { NumberFormatPipe } from './number-format.pipe';
+import { NumberFormatPipe } from './shared/number-format.pipe';
 
 import { ClipboardComponent } from './pages/tools/clipboard/clipboard.component';
 import { OnlineTransferComponent } from './pages/tools/online-transfer/online-transfer.component';
 import { PopupWindowComponent } from './popup-window/popup-window.component';
 import { QrComponent } from './pages/tools/qr/qr.component';
+import { AboutComponent } from './pages/about/about.component';
+import { PortfolioComponent } from './pages/portfolio/portfolio.component';
+import { QuoteFormComponent } from './quote-form/quote-form.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { QrComponent } from './pages/tools/qr/qr.component';
     OnlineTransferComponent,
     PopupWindowComponent,
     QrComponent,
+    AboutComponent,
+    PortfolioComponent,
+    QuoteFormComponent,
   ],
   imports: [
     BrowserModule,

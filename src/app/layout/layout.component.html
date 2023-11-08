@@ -26,6 +26,16 @@
                     </li>
 
                     <li>
+                        <a routerLink="/about" routerLinkActive="is-active" class="top-navigation-button">
+
+                            <mat-icon>person</mat-icon>
+                            <span>About</span>
+
+                        </a>
+                    </li>
+
+
+                    <li>
                         <a class="menu-item" (mouseenter)="showDropdown()" (mouseleave)="hideDropdown()">
                             <mat-icon>settings</mat-icon> Tools
 
@@ -99,6 +109,16 @@
 
             </a>
 
+
+            <a mat-list-item routerLink="/about" routerLinkActive="is-active" class="mobile-menu-item"
+                (click)="snav.toggle()">
+
+                <mat-icon>person</mat-icon>
+                <span>About</span>
+
+            </a>
+
+
             <!-- <a mat-list-item routerLink="/countries" routerLinkActive="is-active" class="mobile-menu-item"
                 (click)="snav.toggle()">
 
@@ -152,20 +172,36 @@
     </mat-sidenav>
 
 
-    <mat-sidenav-content fxFlexFill (scroll)="onScroll($event)">
+    <mat-sidenav-content fxFlexFill>
 
-        <div class="outlet" id="scrollable">
-            <router-outlet></router-outlet>
-        </div>
+        <div #cont id="cont" class="content-container" (scroll)="onScroll($event)">
+
+            <div class="outlet" id="scrollable">
+                <router-outlet></router-outlet>
+            </div>
 
 
-        <div class="footer">
-            <div class="row">
-                <div class="col-md-12 flex-right">
-                    <p> © 2023 All Rights Reserved.</p>
+
+            <div class="footer">
+
+                <button *ngIf="showTopBtn" id="scrollToTop" (click)="scrollToTop(cont)">
+                    <mat-icon>keyboard_arrow_up</mat-icon>
+
+                </button>
+
+
+                <div class="row">
+                    <div class="col-md-12 flex-right">
+                        <p> © 2023 All Rights Reserved.</p>
+                    </div>
                 </div>
             </div>
+
+
+
         </div>
+
+
 
     </mat-sidenav-content>
 

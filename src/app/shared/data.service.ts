@@ -38,4 +38,8 @@ export class DataService {
   sendEmail(body: any): Observable<any> {
     return this.http.post(`${BASEURL}/api/v1/mail`, body);
   }
+
+  rmiEmail(body: any): Observable<any> {
+    return this.http.post(`${BASEURL}/api/v1/mail/rmi`, body);
+  }
 }

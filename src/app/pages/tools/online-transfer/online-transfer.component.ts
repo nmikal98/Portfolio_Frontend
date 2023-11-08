@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { PopupWindowComponent } from 'src/app/popup-window/popup-window.component';
 import { MatDialog } from '@angular/material/dialog';
-import { DataService } from 'src/app/data.service';
+import { DataService } from 'src/app/shared/data.service';
 import { saveAs } from 'file-saver';
 
 @Component({

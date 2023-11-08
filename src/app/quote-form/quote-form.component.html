@@ -1,0 +1,42 @@
+<div class="form-cont">
+    <div class="close-button" (click)="closeDialog()">&times;</div>
+
+    <h5 id="title">Fill your info and i'll get back to you with more information about <span>{{data}}</span>. </h5>
+
+
+
+    <form id="rmi-form" [formGroup]="quoteForm" (ngSubmit)="submitForm(quoteForm.value)">
+
+        <div class="inputs">
+            <mat-form-field>
+                <input matInput placeholder="Name" formControlName="name" required>
+                <mat-error *ngIf="submitted && e.name.errors">
+
+                    <small class="text-danger" *ngIf="e.name.errors.required">
+                        Name is
+                        required</small>
+                </mat-error>
+
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="email" placeholder="Email" formControlName="email" required>
+
+                <mat-error *ngIf="submitted && e.email.errors">
+                    <small class="text-danger" *ngIf="e.email.errors.required">
+                        Email is
+                        required</small>
+
+                    <small class="text-danger" *ngIf="e.email.errors.pattern">
+                        Email is
+                        not valid</small>
+                </mat-error>
+
+            </mat-form-field>
+        </div>
+
+        <div class="flex-middle">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,92 @@
+.page-title {
+  p {
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.background {
+  mat-icon {
+    margin-right: 8px;
+  }
+}
+
+.skills {
+  background: rgba(0, 0, 0, 0.4509803922);
+  .divider {
+    margin-bottom: 4rem;
+  }
+}
+.boxes-cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .box {
+    border: 1px solid #5481aa;
+    padding: 2rem;
+    border-radius: 8px;
+    transition: 0.7s;
+    margin: 2rem;
+
+    @media screen and (max-width: 674px) {
+      border: none;
+      padding: 0;
+      margin: 1rem;
+    }
+
+    &:hover {
+      transform: translate(0, -12px);
+      transition: 0.3s;
+      border: 2px solid #03c988;
+    }
+
+    svg {
+      width: 6rem;
+      @media screen and (max-width: 674px) {
+        width: 3rem;
+      }
+    }
+
+    p {
+      color: #fff;
+      span {
+        color: #03c988;
+      }
+    }
+  }
+}
+
+.tooltip {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2rem;
+  background-color: #09022f;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 1;
+  width: 300px;
+  box-shadow: 0px 0px 20px 0px #403e4d;
+
+  @media screen and (max-width: 670px) {
+    width: 200px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.box:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}

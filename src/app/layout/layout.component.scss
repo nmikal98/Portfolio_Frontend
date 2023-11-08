@@ -80,7 +80,7 @@
   &::after {
     content: "";
     position: absolute;
-    width: 100%;
+    width: 107%;
     transform: scaleX(0);
     height: 3px;
     bottom: -5px;
@@ -113,7 +113,7 @@
 .is-active {
   &::after {
     transform: scaleX(1) !important;
-    background-color: #fff !important;
+    // background-color: #fff !important;
   }
 }
 
@@ -137,9 +137,15 @@ mat-sidenav-content {
   height: 100vh;
   background-image: url("../../assets/img/bg.png");
   position: fixed;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
 
+  .content-container {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
   // @media screen and (max-width: 674px) {
   //   min-height: calc(100% - 48px) !important;
   //   height: calc(100% - 48px) !important;
@@ -147,6 +153,7 @@ mat-sidenav-content {
 
   .outlet {
     min-height: calc(100vh - 22px);
+
     padding-top: 84px;
   }
 
@@ -162,6 +169,30 @@ mat-sidenav-content {
       padding: 0px 16px;
       height: 22px;
       font-size: 12px;
+    }
+
+    #scrollToTop {
+      position: fixed;
+      bottom: 32px;
+      right: 22px;
+      z-index: 9;
+      background: #03c988;
+      border: none;
+      height: 38px;
+      width: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      mat-icon {
+        color: #050119;
+      }
+
+      &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+      }
     }
   }
 }
