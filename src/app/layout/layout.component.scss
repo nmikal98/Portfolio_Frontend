@@ -133,8 +133,6 @@ mat-sidenav {
 // Content
 ////////////////////////////////////////////
 mat-sidenav-content {
-  width: 100vw;
-  height: 93vh;
   background-image: url("../../assets/img/bg.png");
   position: fixed;
   overflow-y: hidden;
@@ -145,12 +143,11 @@ mat-sidenav-content {
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-  }
-  // @media screen and (max-width: 674px) {
-  //   min-height: calc(100% - 48px) !important;
-  //   height: calc(100% - 48px) !important;
-  // }
 
+    @media screen and (max-width: 960px) {
+      height: calc(100vh - 54px) !important;
+    }
+  }
   .outlet {
     min-height: calc(100vh - 22px);
 
