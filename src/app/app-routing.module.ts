@@ -28,10 +28,10 @@ const routes: Routes = [
         path: 'about',
         component: AboutComponent,
       },
-      // {
-      //   path: 'portfolio',
-      //   component: PortfolioComponent,
-      // },
+      {
+        path: 'portfolio',
+        component: PortfolioComponent,
+      },
 
       {
         path: 'clipboard',

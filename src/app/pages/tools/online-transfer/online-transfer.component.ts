@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { PopupWindowComponent } from 'src/app/popup-window/popup-window.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -67,8 +67,8 @@ export class OnlineTransferComponent {
 
     formData.append('fileInput', this.fileToUpload);
 
-    this.ds.uploadFile(formData).subscribe(
-      (res: any) => {
+    this.ds.uploadFile(formData).subscribe({
+      next: (res: any) => {
         this.ts.success('Upload successful!');
         this.fileInput.nativeElement.value = '';
 
@@ -76,11 +76,11 @@ export class OnlineTransferComponent {
 
         this.showPopupWithCode(code);
       },
-      (error) => {
+      error: (error) => {
         console.error('Upload error:', error);
         this.ts.error('Upload error');
-      }
-    );
+      },
+    });
   }
 
   showPopupWithCode(code: string) {
@@ -104,7 +104,7 @@ export class OnlineTransferComponent {
   }
 
   onRetrieve() {
-    var code: number = 0;
+    let code: number = 0;
 
     if (this.retrieve_code) {
       code = this.retrieve_code;
@@ -115,8 +115,8 @@ export class OnlineTransferComponent {
       return;
     }
 
-    this.ds.downloadFile(code).subscribe(
-      (res: any) => {
+    this.ds.downloadFile(code).subscribe({
+      next: (res: any) => {
         if (res) {
           let downloadURL = window.URL.createObjectURL(res);
           saveAs(downloadURL);
@@ -124,10 +124,10 @@ export class OnlineTransferComponent {
           this.ts.error('File does not exists or download expired!');
         }
       },
-      (error) => {
+      error: (error) => {
         console.error('Download error:', error);
         this.ts.error('Download error');
-      }
-    );
+      },
+    });
   }
 }

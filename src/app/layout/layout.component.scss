@@ -113,7 +113,6 @@
 .is-active {
   &::after {
     transform: scaleX(1) !important;
-    // background-color: #fff !important;
   }
 }
 
@@ -267,7 +266,6 @@ mat-sidenav-content {
   flex-direction: row;
   align-items: center;
   padding: 0 16px;
-  border-radius: inherit;
   transition: height 225ms cubic-bezier(0.4, 0, 0.2, 1);
   background: none;
   background-color: #1b1925;
@@ -285,9 +283,6 @@ mat-sidenav-content {
   transition: margin 225ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-}
-
-.mat-expansion-panel {
   background: #1b1925;
   color: rgba(0, 0, 0, 0.87);
 }

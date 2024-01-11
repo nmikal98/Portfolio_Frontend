@@ -1,4 +1,56 @@
-<!-- <div *ngFor="let website of websites">
-    <h2>{{ website.name }}</h2>
-    <iframe [src]="website.url" width="300px" height="480px"></iframe>
-</div> -->
+<div class="page-container">
+
+
+
+
+    <div class="row page-title">
+
+
+
+        <div class="col-lg-12 text-section fade-in active">
+            <h2> <span>PORTFOLIO</span> </h2>
+        </div>
+
+
+
+
+        <hr class="divider light fade-in active">
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="inner-cont">
+
+
+
+
+
+
+            <div class="row website-showcase">
+                <div class="website-item" *ngFor="let website of websites">
+                    <a class="website-title" target="_blank" href="{{website.url}}">
+                        {{ website.name }}
+                    </a>
+                    <iframe title="" [src]="website.sanitazedURL" width="{{website.width}}"
+                        height="{{website.height}}"></iframe>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+</div>

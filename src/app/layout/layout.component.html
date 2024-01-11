@@ -11,7 +11,7 @@
             </button>
 
             <div class="logo-cont">
-                <a routerLink="/home"><img src="../../assets/img/logo.png"></a>
+                <a routerLink="/home"><img src="../../assets/img/logo.png" alt=""></a>
             </div>
 
             <nav class="main-menu" fxShow="true" fxHide.lt-md>
@@ -30,6 +30,15 @@
 
                             <mat-icon>person</mat-icon>
                             <span>About</span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a routerLink="/portfolio" routerLinkActive="is-active" class="top-navigation-button">
+
+                            <mat-icon>dashboard</mat-icon>
+                            <span>Portfolio</span>
 
                         </a>
                     </li>
@@ -71,6 +80,7 @@
 
 
 
+
 </div>
 </a>
 </li>
@@ -87,8 +97,8 @@
 <li>
     <div class="project-button">
         <a href="https://github.com/nmikal98/Portfolio_Frontend.git">
-            <img src="../../assets/img/branch.svg">
-            <img src="../../assets/img/star.svg"></a>
+            <img alt="" src="../../assets/img/branch.svg">
+            <img alt="" src="../../assets/img/star.svg"></a>
     </div>
 </li>
 </ul>
@@ -118,14 +128,15 @@
 
             </a>
 
-
-            <!-- <a mat-list-item routerLink="/countries" routerLinkActive="is-active" class="mobile-menu-item"
+            <a mat-list-item routerLink="/portfolio" routerLinkActive="is-active" class="mobile-menu-item"
                 (click)="snav.toggle()">
 
-                <mat-icon>public</mat-icon>
-                <span>Countries Repo</span>
+                <mat-icon>dashboard</mat-icon>
+                <span>Portfolio</span>
 
-            </a> -->
+            </a>
+
+
 
             <mat-expansion-panel class="mobile-menu-section">
                 <mat-expansion-panel-header>
@@ -154,6 +165,8 @@
                     <span>QR Code Generator</span>
                 </a>
 
+
+
             </mat-expansion-panel>
 
 
@@ -164,7 +177,7 @@
             </a>
 
             <a mat-list-item href="https://github.com/nmikal98/Portfolio_Frontend.git" class="mobile-menu-item">
-                <img src="../../assets/img/branch.svg">
+                <img src="../../assets/img/branch.svg" alt="">
                 <span> GitHub Link </span>
             </a>
 
@@ -192,7 +205,7 @@
 
                 <div class="row">
                     <div class="col-md-12 flex-right">
-                        <p> © 2023 All Rights Reserved.</p>
+                        <p> © 2024 All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
